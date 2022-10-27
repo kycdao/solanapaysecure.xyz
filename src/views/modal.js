@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-import { Helmet } from 'react-helmet'
+import QRCode from "react-qr-code";
 
-import Button from '../components/button'
-import './modal.css'
+import { Helmet } from "react-helmet";
+
+import Button from "../components/button";
+import "./modal.css";
 
 const Modal = (props) => {
   return (
@@ -32,25 +34,15 @@ const Modal = (props) => {
                 This
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: ' ',
+                    __html: " ",
                   }}
                 />
               </span>
               <span className="modal-text04">
                 demo
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
               </span>
               <span>
                 will demonstrate the solana pay kyc system during an NFT drop.
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
               </span>
             </span>
             <div className="modal-container2">
@@ -97,11 +89,11 @@ const Modal = (props) => {
               <span>Connect Wallet</span>
             </span>
             <span className="modal-text17">
-              To purchase this item, your should activate you wallet.
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
+              To purchase this item, your should activate XXX you wallet. //
+              https://www.npmjs.com/package/react-qr-code
+              <QRCode
+                value="https://phantom.app/ul/https://solanapaysecure.xyz/go"
+                size={128}
               />
             </span>
           </div>
@@ -113,7 +105,7 @@ const Modal = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;
