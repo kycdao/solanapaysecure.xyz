@@ -70,7 +70,7 @@ const Modal = (props) => {
                   </span>
                 </span>
                 <span className="modal-text13">
-                  <span>102.99 SOL</span>
+                  <span>0.01 USDC</span>
                 </span>
               </div>
               <img

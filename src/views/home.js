@@ -81,7 +81,7 @@ const Home = (props) => {
                   </span>
                 </span>
                 <span className="home-text13">
-                  <span>102.99 SOL</span>
+                  <span>0.01 USDC</span>
                 </span>
               </div>
               <img
