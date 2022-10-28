@@ -32,11 +32,6 @@ const Modal = (props) => {
             <span className="modal-text02">
               <span>
                 This
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: " ",
-                  }}
-                />
               </span>
               <span className="modal-text04">
                 demo

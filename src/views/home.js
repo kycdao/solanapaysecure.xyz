@@ -31,32 +31,17 @@ const Home = (props) => {
             <span className="home-text02">
               <span>
                 This
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
               </span>
               <span className="home-text04">
                 demo
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
               </span>
               <span>
                 will demonstrate the solana pay kyc system during an NFT drop.
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
               </span>
             </span>
             <div className="home-container2">
               <Link to="/modal" className="home-navlink">
-                <Button className="home-component"></Button>
+                <Button></Button>
               </Link>
             </div>
           </div>
