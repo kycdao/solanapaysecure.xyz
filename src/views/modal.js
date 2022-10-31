@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import QRCode from "react-qr-code";
 
@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 
 import Button from "../components/button";
 import "./modal.css";
+import { Link } from 'react-router-dom'
 
 const Modal = (props) => {
   return (
@@ -92,11 +93,9 @@ const Modal = (props) => {
               />
             </span>
           </div>
-          <div className="modal-frame8190">
-            <span className="modal-text18">
-              <span>Connect</span>
-            </span>
-          </div>
+            <Link to="/KycDaoModal" className="home-navlink">
+                <Button className="home-component"></Button>
+              </Link>
         </div>
       </div>
     </div>
