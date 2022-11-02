@@ -141,9 +141,11 @@
 footer{
   position: absolute;
   padding: 1rem;
-  background: black;
+  background: var(--dl-color-default-darkest);
+  /*background: black;*/
   width: 100%;
   border-top: 1px solid rgba(20, 241, 149, 0.2);
+  bottom: 0;
 
   display: flex;
   justify-content: center;
@@ -152,6 +154,7 @@ footer{
 footer #logo-wrapper{
   display: flex;
   align-items: center;
+  justify-content: end;
 
 }
 

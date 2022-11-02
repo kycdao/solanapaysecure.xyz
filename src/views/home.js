@@ -29,7 +29,7 @@ const Home = (props) => {
         <div className="container home-frame8126">
           <div className="home-container1">
             <h1 className="home-text02 headline-1">
-              Wallet verification for trusted payments.
+              Wallet verification for <span>trusted payments.</span>
             </h1>
             <h2 className="home-text02 headline-2">
               This is a demo for Solana Pay extended with a compliance proof request. kycDAO proofs ensure merchants are paid from a verified wallet.
@@ -75,7 +75,7 @@ const Home = (props) => {
         </div>
       </div>
 
-      <div id="the-modal" className="">
+      <div id="the-modal" className="opened">
         <div className="modal-content">
           <div className="modal-header">
             <h1>Connect Wallet</h1>

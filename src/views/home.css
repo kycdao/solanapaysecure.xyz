@@ -77,6 +77,10 @@
   text-decoration: none;
 }
 
+.headline-1 span{
+  color: var(--dl-color-default-green);
+}
+
 .headline-2{
   color: rgb(255, 255, 255);
   width: 581px;
