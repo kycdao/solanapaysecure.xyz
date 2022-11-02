@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 module.exports = {
   reactScriptsVersion: "react-scripts",
   style: {
@@ -7,6 +9,12 @@ module.exports = {
           url: false,
         };
       },
+    },
+  },
+  devServer: {
+    https: {
+      key: fs.readFileSync('./key.pem'),
+      cert: fs.readFileSync('./cert.pem'),
     },
   },
 };

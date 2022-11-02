@@ -1,6 +1,5 @@
 .KycDaoModalContent {
-    top: 100px;
-    position: relative;
+    position: absolute;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
@@ -8,4 +7,9 @@
     width: 400px;
     height: 650px;
     overflow: hidden;
+}
+
+#kycDaoMountingPoint {
+    top: 17%;
+    left: 31%;
 }
