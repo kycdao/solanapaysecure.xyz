@@ -281,7 +281,6 @@
   visibility: hidden;
   opacity: 0;
   transition-duration: 0.2s;
-
 }
 
 #the-modal.opened{
@@ -330,6 +329,10 @@
 
 .modal-body{
   height: 150px;
+}
+
+.modal-body .qr-code{
+
 }
 
 #the-modal .modal-button{
