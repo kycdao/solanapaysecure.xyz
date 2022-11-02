@@ -13,7 +13,7 @@ const Button = (props) => {
 }
 
 Button.defaultProps = {
-  text: 'Buy asset',
+  text: 'Buy coffee',
 }
 
 Button.propTypes = {
