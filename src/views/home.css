@@ -382,6 +382,10 @@
 }
 
 @media(max-width: 479px) {
+  .home-group8124{
+    position: relative;
+  }
+
   .home-frame8126 {
     height: 881px;
     padding-left: 0px;
@@ -391,12 +395,12 @@
   .home-text02 {
     color: rgb(255, 255, 255);
     width: 100%;
-    font-size: 42px;
     font-weight: 700;
     line-height: normal;
     padding-left: 24px;
     padding-right: 24px;
     text-decoration: none;
+    /*font-size: 42px;*/
   }
   .home-container2 {
     width: 100%;
@@ -410,6 +414,7 @@
   }
   .home-container3 {
     width: 100%;
+    display: none;
   }
   .home-text06 {
     top: 0px;

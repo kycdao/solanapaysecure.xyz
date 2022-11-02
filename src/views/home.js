@@ -75,7 +75,7 @@ const Home = (props) => {
         </div>
       </div>
 
-      <div id="the-modal" className="opened">
+      <div id="the-modal" className="">
         <div className="modal-content">
           <div className="modal-header">
             <h1>Connect Wallet</h1>
