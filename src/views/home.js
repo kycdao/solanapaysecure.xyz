@@ -44,7 +44,7 @@ const Home = (props) => {
           <div className="container home-group8125">
             <div className="home-container3">
               <span className="home-text06">
-                <span>Get NFT</span>
+                <span>Get Coffee</span>
               </span>
               <img
                 alt="Frame3451"
@@ -74,7 +74,36 @@ const Home = (props) => {
           </div>
         </div>
       </div>
+
+      <div id="the-modal" className="">
+
+        <div className="modal-content">
+          <div className="modal-header">
+            <h1>Connect Wallet</h1>
+            <h3>To purchase this item, your should activate you wallet.</h3>
+            <div className="modal-close">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z"/></svg>
+            </div>
+          </div>
+
+          <div className="modal-body">
+
+          </div>
+
+
+          <div className="modal-button">
+            <span className="modal-text">
+                <span>Connect wallet</span>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
+
+
+
   )
 }
 

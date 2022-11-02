@@ -1,3 +1,4 @@
+
 .home-container {
   width: 100%;
   display: flex;
@@ -49,8 +50,6 @@
   text-decoration: none;
 }
 
-
-
 .home-frame8191 {
   padding: 16px 0;
 }
@@ -100,7 +99,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 .home-text04 {
   color: var(--dl-color-default-green);
@@ -160,7 +158,7 @@
   color: rgba(255, 255, 255, 1);
   height: auto;
   position: absolute;
-  font-size: 48px;
+  font-size: 40px;
   align-self: auto;
   font-style: 75 Bold;
   text-align: left;
@@ -265,6 +263,76 @@
   border-width: 2px;
   border-radius: 50px;
 }
+
+/* MODAL */
+
+#the-modal{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(20, 11, 37, 0.9);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#the-modal .modal-content{
+  width: 460px;
+  background: var(--dl-color-default-darkest);
+  padding: 2rem;
+  border-top: 2px solid var(--dl-color-default-green);
+}
+
+.modal-header{
+  position: relative;
+}
+
+.modal-header .modal-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.modal-header .modal-close svg path:hover{
+  color: var(--dl-color-default-green);
+}
+
+.modal-header .modal-close svg path{
+  fill: white;
+}
+
+.modal-content h1{
+  margin-bottom: 2rem;
+}
+
+.modal-content h3{
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.modal-content h1, h3{
+  color: white;
+}
+
+.modal-body{
+  height: 150px;
+}
+
+#the-modal .modal-button{
+  display: inline-flex;
+  cursor: pointer;
+}
+
+#the-modal .modal-button:hover{
+  background: #6610F2;
+}
+
+
+/* BRAKEPOINTS */
 
 @media(max-width: 1200px) {
   .home-frame8191 {
