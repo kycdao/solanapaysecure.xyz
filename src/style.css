@@ -93,3 +93,37 @@
   text-transform: none;
   text-decoration: none;
 }
+
+/* FOOTER */
+
+footer{
+  position: absolute;
+  padding: 1rem;
+  background: black;
+  width: 100%;
+  border-top: 1px solid rgba(20, 241, 149, 0.2);
+
+}
+
+footer #logo-wrapper{
+  display: flex;
+  align-items: center;
+
+}
+
+footer #logo-wrapper p{
+  font-family: Roboto;
+  font-max-size: 16px;
+  color: white;
+  margin-right: 1rem;
+
+}
+
+footer #logo-wrapper a{
+
+}
+
+footer #logo-wrapper a svg{
+
+}
+

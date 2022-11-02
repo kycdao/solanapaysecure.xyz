@@ -8,7 +8,8 @@
 }
 .home-mac-book-air-m23 {
   width: 100%;
-  height: 1165px;
+  /*height: 1165px;*/
+  height: 100vh;
   display: flex;
   position: relative;
   align-items: center;
