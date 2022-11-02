@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
-    "@kycdao/kycdao-web-sdk": "/home/attilav/codes/web-sdk",
+    "@kycdao/kycdao-web-sdk": "0.1.0",
     "prop-types": "15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -13,7 +13,7 @@
     "react-router-dom": "^5.2.0"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false craco start",
+    "start": "cross-env GENERATE_SOURCEMAP=false craco start",
     "build": "craco build",
     "test": "craco test --env=jsdom",
     "eject": "craco eject",
@@ -33,6 +33,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "react-scripts": "^5.0.1"
   },
   "packageManager": "yarn@3.2.4"
