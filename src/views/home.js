@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { Helmet } from "react-helmet";
+import QRCode from "react-qr-code";
 
 import "./home.css";
 
@@ -8,11 +9,14 @@ const Home = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const toggleModal = (event) => {
-    console.log('setting modal open to ', !modalOpen)
     setModalOpen(!modalOpen);
   };
 
-  console.log('hi ', modalOpen)
+  const startFlow = (event) => {
+    if (typeof window.solana !== 'object') {
+      alert('cannot connect to Solana wallet')
+    }
+  }
 
   return (
     <div className="home-container">
@@ -97,12 +101,23 @@ const Home = (props) => {
               </div>
             </div>
             <div className="modal-body">
-              <div className="qr-code">QR here</div>
+              <h3>
+                Scan this QR code to open this site in your wallet's in-app
+                browser.
+              </h3>
+              <div className="qr-code">
+                <QRCode
+                  value="https://phantom.app/ul/https://solanapaysecure.xyz/?startFlow=1"
+                  size={128}
+                />
+              </div>
             </div>
-            <div className="modal-button">
-              <span className="modal-text">
-                <button onClick={toggleModal}>Connect wallet</button>
-              </span>
+            <div className="modal-button-container">
+              <div onClick={startFlow} className="button-button">
+                <span className="modal-text">
+                  <button>Connect wallet</button>
+                </span>
+              </div>
             </div>
           </div>
         </div>
