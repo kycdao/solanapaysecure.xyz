@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Helmet } from "react-helmet";
-import QRCode from "react-qr-code";
+import solanaPay from "../utils/solana-pay";
 
-import KycDaoModal from '../views/kycDaoModal';
+import KycDaoModal from "../views/kycDaoModal";
 
 import "./home.css";
 
@@ -17,7 +17,6 @@ const Home = (props) => {
 
   const kycModalInitialState =
     new URLSearchParams(window.location.search).get("startKyc") === "1";
-
 
   const [modalOpen, setModalOpen] = useState(modalInitialState);
   const [kycModalOpen, setKycModalOpen] = useState(kycModalInitialState);
@@ -34,6 +33,22 @@ const Home = (props) => {
 
     setKycModalOpen(true);
   };
+
+  useEffect(() => {
+    if (!modalOpen) {
+      return;
+    }
+
+    const qrContainer = document.getElementById("mount-qr-code");
+    if (qrContainer) solanaPay.insertQrIntoDom(phantomInAppUrl, qrContainer);
+
+    return () => {
+      const qrContainer = document.getElementById("mount-qr-code");
+      if (qrContainer) {
+        qrContainer.innerHTML = "";
+      }
+    };
+  }, [modalOpen]);
 
   return (
     <div className="home-container">
@@ -84,16 +99,7 @@ const Home = (props) => {
             </div>
             <div className="home-group8124">
               <div className="home-group8123">
-                <span className="home-text08">
-                  <span>
-                    <span>y00ts: mint t00b #12007</span>
-                    <br></br>
-                    <span></span>
-                  </span>
-                </span>
-                <span className="home-text13">
-                  <span>1 USDc</span>
-                </span>
+                <h3>1 USDC</h3>
               </div>
               <img
                 alt="Its a coffe mug, in a dark background, loosk pretty delicious."
@@ -118,12 +124,12 @@ const Home = (props) => {
               </div>
             </div>
             <div className="modal-body">
-              <p>
+              <h3>
                 Scan this QR code to open this site in your wallet's in-app
                 browser.
-              </p>
+              </h3>
               <div className="qr-code">
-                <QRCode value={phantomInAppUrl} size={128} level="L" />
+                <div id="mount-qr-code"></div>
               </div>
             </div>
             <div className="modal-button-container">

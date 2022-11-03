@@ -21,13 +21,15 @@ const KycDaoModal = (props) => {
             "SolanaDevnet",
           ],
           enabledVerificationTypes: ["KYC"],
-          height: "400px",
-          width: "650px",
+          height: "100%",
+          width: "100%",
           isIframe: false,
           parent: "#kycDaoMountingPoint",
           messageTargetOrigin: window.location.origin,
           onFail: () => {},
-          onSuccess: () => {},
+          onSuccess: () => {
+            // open coffee Solana Pay QR here
+          },
           url: "",
         });
       }
