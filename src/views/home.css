@@ -156,11 +156,11 @@
 }
 
 .home-text06 {
-  left: 47px;
+  left: 48px;
   color: rgba(255, 255, 255, 1);
   height: auto;
   position: absolute;
-  font-size: 40px;
+  /* font-size: 40px; */
   align-self: auto;
   text-align: left;
   font-family: 'Poppins', sans-serif;
@@ -168,6 +168,9 @@
   line-height: normal;
   font-stretch: normal;
   text-decoration: none;
+  text-transform: uppercase;
+  font-size: 34px;
+  top: 4px;
 }
 
 .home-frame {
