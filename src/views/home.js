@@ -3,13 +3,24 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import QRCode from "react-qr-code";
 
+import KycDaoModal from '../views/kycDaoModal';
+
 import "./home.css";
 
 const Home = (props) => {
   const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
     "https://solanapaysecure.xyz/?startFlow=1"
   )}`;
-  const [modalOpen, setModalOpen] = useState(false);
+
+  const modalInitialState =
+    new URLSearchParams(window.location.search).get("startFlow") === "1";
+
+  const kycModalInitialState =
+    new URLSearchParams(window.location.search).get("startKyc") === "1";
+
+
+  const [modalOpen, setModalOpen] = useState(modalInitialState);
+  const [kycModalOpen, setKycModalOpen] = useState(kycModalInitialState);
 
   const toggleModal = (event) => {
     setModalOpen(!modalOpen);
@@ -18,7 +29,10 @@ const Home = (props) => {
   const startFlow = (event) => {
     if (typeof window.solana !== "object") {
       alert("cannot connect to Solana wallet");
+      return;
     }
+
+    setKycModalOpen(true);
   };
 
   return (
@@ -122,6 +136,8 @@ const Home = (props) => {
           </div>
         </div>
       )}
+
+      {kycModalOpen && KycDaoModal()}
     </div>
   );
 };
