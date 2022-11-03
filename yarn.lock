@@ -2332,9 +2332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kycdao/kycdao-web-sdk@npm:0.1.0":
-  version: 0.1.0
-  resolution: "@kycdao/kycdao-web-sdk@npm:0.1.0"
+"@kycdao/kycdao-web-sdk@npm:0.2.0":
+  version: 0.2.0
+  resolution: "@kycdao/kycdao-web-sdk@npm:0.2.0"
   dependencies:
     "@kycdao/kycdao-sdk": "npm:^0.3.3"
     "@testing-library/jest-dom": "npm:^5.16.5"
@@ -2359,7 +2359,7 @@ __metadata:
     stream: "npm:0.0.2"
     styled-components: "npm:^5.3.6"
     typescript: "npm:^4.8.4"
-  checksum: aabed1a4dfa1c7fca8756c8c6805d64dd0a54b37c9374b524d9bf39f3570ec28403bfa0e483f8394520be4987bad656043443380fc6eb3297a7a0ab42bb3cc66
+  checksum: aebce026a133f13606a6e24a8c353c99b668aac5aa262f418c9ce0bbd5b26b9b6b0b12ca4045f2698e2be125be5caa185da4329328488f823d3c4825dbcaed40
   languageName: node
   linkType: hard
 
@@ -2741,6 +2741,30 @@ __metadata:
   dependencies:
     buffer: "npm:~6.0.3"
   checksum: aa212ebb7d63a46013c116dee0e4add3db533a7431507297fe73774bbbd357a7ee5d9ef42898590e998683eca5b10bad3ca7a5ca98c0bd12c36e7ab0cf82c6ce
+  languageName: node
+  linkType: hard
+
+"@solana/pay@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "@solana/pay@npm:0.2.4"
+  dependencies:
+    "@solana/qr-code-styling": "npm:^1.6.0-beta.0"
+    "@solana/spl-token": "npm:^0.3.5"
+    "@solana/web3.js": "npm:^1.61.0"
+    bignumber.js: "npm:^9.1.0"
+    cross-fetch: "npm:^3.1.5"
+    js-base64: "npm:^3.7.2"
+    tweetnacl: "npm:^1.0.3"
+  checksum: 344df1d480945f09626b6f6c436627ed298622ed3655dacde272fcf02c6976139a53c75d98e05340ffb3e02a4426450b601b1debb7c15cd4691dccf5135e58a5
+  languageName: node
+  linkType: hard
+
+"@solana/qr-code-styling@npm:^1.6.0-beta.0":
+  version: 1.6.0-rc.1
+  resolution: "@solana/qr-code-styling@npm:1.6.0-rc.1"
+  dependencies:
+    qrcode-generator: "npm:^1.4.3"
+  checksum: 360354f51e45944ed9617c6612efdf4538eda3b7014c4f49655851a2eab9dee58010c33b0946101498d0ec4efb27a834c837374c6acf6823f7de36406b85eee6
   languageName: node
   linkType: hard
 
@@ -3326,7 +3350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solana/web3.js@npm:^1.32.0, @solana/web3.js@npm:^1.36.0, @solana/web3.js@npm:^1.44.3, @solana/web3.js@npm:^1.66.1":
+"@solana/web3.js@npm:^1.32.0, @solana/web3.js@npm:^1.36.0, @solana/web3.js@npm:^1.44.3, @solana/web3.js@npm:^1.61.0, @solana/web3.js@npm:^1.66.1":
   version: 1.66.2
   resolution: "@solana/web3.js@npm:1.66.2"
   dependencies:
@@ -5806,7 +5830,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bignumber.js@npm:^9.0.1, bignumber.js@npm:^9.0.2":
+"bignumber.js@npm:^9.0.1, bignumber.js@npm:^9.0.2, bignumber.js@npm:^9.1.0":
   version: 9.1.0
   resolution: "bignumber.js@npm:9.1.0"
   checksum: faf9336891e91cc6c3e8ed1cb7e9b1a9ca73d452748fad169ffd5cdb983fae43fd78c71dc7e644597d64881a128ae5e4e1c7ba0152517a4acfce2666f2453bb5
@@ -6825,6 +6849,15 @@ __metadata:
     cross-env: src/bin/cross-env.js
     cross-env-shell: src/bin/cross-env-shell.js
   checksum: ea325d0a0461ec6e850ce37887fbbc8794ca6aa906f7955550a62493974581a61e41ad4416d7358aa8bc442a6baa6469c842ffddf6e833e3b346739b43ba840c
+  languageName: node
+  linkType: hard
+
+"cross-fetch@npm:^3.1.5":
+  version: 3.1.5
+  resolution: "cross-fetch@npm:3.1.5"
+  dependencies:
+    node-fetch: "npm:2.6.7"
+  checksum: 83fa7b13186c55abf289d6907b7d0be13e8c85066fb7d82a99b1b16ebcbf4cb49bcd9806020e386c94d69c7c09e15c4aade7de56ece40f86dba0147915d5c196
   languageName: node
   linkType: hard
 
@@ -10790,6 +10823,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-base64@npm:^3.7.2":
+  version: 3.7.2
+  resolution: "js-base64@npm:3.7.2"
+  checksum: 89d75f4f60f15a71dc8b9e06465c74d7063be57d036493ac0e2f4e8b0450e26fb36f53f0b4dcbced4f286c2eeb02273ecfb03fed0495fdc433fdda49eb1fe4ea
+  languageName: node
+  linkType: hard
+
 "js-sdsl@npm:^4.1.4":
   version: 4.1.5
   resolution: "js-sdsl@npm:4.1.5"
@@ -11782,7 +11822,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2, node-fetch@npm:^2.6.1":
+"node-fetch@npm:2, node-fetch@npm:2.6.7, node-fetch@npm:^2.6.1":
   version: 2.6.7
   resolution: "node-fetch@npm:2.6.7"
   dependencies:
@@ -13539,6 +13579,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"qrcode-generator@npm:^1.4.3":
+  version: 1.4.4
+  resolution: "qrcode-generator@npm:1.4.4"
+  checksum: fc2333f8be14f0b6dfb23de2cc3692cbaa1cb505f0e42551ea7848438b2d912f930d302cd9a5c866d55ea737e5bc53f7aafc2d0eb189b18ba2385b409e721e2f
+  languageName: node
+  linkType: hard
+
 "qrcode.react@npm:^1.0.1":
   version: 1.0.1
   resolution: "qrcode.react@npm:1.0.1"
@@ -14963,7 +15010,8 @@ __metadata:
   resolution: "solana-pay-demo@workspace:."
   dependencies:
     "@craco/craco": "npm:^6.4.3"
-    "@kycdao/kycdao-web-sdk": "npm:0.1.0"
+    "@kycdao/kycdao-web-sdk": "npm:0.2.0"
+    "@solana/pay": "npm:^0.2.4"
     cross-env: "npm:^7.0.3"
     prop-types: "npm:15.7.2"
     react: "npm:^17.0.2"
@@ -15854,7 +15902,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tweetnacl@npm:^1.0.1":
+"tweetnacl@npm:^1.0.1, tweetnacl@npm:^1.0.3":
   version: 1.0.3
   resolution: "tweetnacl@npm:1.0.3"
   checksum: e6d5730951ebcb2bf67874dd9f70de3e049a3c58d0b0bc5cc70e888fbd253f77e5bab00aea42fb71b605c42807542edda807f00ecdc29324f2154049fc5a341a
