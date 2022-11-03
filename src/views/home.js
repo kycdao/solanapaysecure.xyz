@@ -9,7 +9,11 @@ const Home = (props) => {
   const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
     "https://solanapaysecure.xyz/?startFlow=1"
   )}`;
-  const [modalOpen, setModalOpen] = useState(false);
+
+  const modalInitialState =
+    new URLSearchParams(window.location.search).get("startFlow") === "1";
+
+  const [modalOpen, setModalOpen] = useState(modalInitialState);
 
   const toggleModal = (event) => {
     setModalOpen(!modalOpen);
