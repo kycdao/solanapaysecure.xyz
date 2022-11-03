@@ -151,11 +151,10 @@ footer{
   justify-content: center;
 }
 
+
 footer #logo-wrapper{
   display: flex;
-  align-items: center;
   justify-content: end;
-
 }
 
 footer #logo-wrapper p{
