@@ -137,7 +137,7 @@ const Home = (props) => {
         </div>
       )}
 
-      {kycModalOpen && KycDaoModal()}
+      {kycModalOpen && <KycDaoModal />}
     </div>
   );
 };
