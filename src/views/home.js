@@ -104,10 +104,10 @@ const Home = (props) => {
               </div>
             </div>
             <div className="modal-body">
-              <h3>
+              <p>
                 Scan this QR code to open this site in your wallet's in-app
                 browser.
-              </h3>
+              </p>
               <div className="qr-code">
                 <QRCode value={phantomInAppUrl} size={128} level="L" />
               </div>

@@ -329,9 +329,14 @@
 
 .modal-content h1, h3 {
   color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
-.modal-body {}
+.modal-body p{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
 
 #the-modal .modal-button{
   display: inline-flex;
