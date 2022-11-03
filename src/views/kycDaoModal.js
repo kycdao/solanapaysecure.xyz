@@ -1,44 +1,56 @@
 import React, { useLayoutEffect, useMemo, useRef, } from "react";
 import { Helmet } from 'react-helmet'
 import Button from '../components/button'
-import '@kycdao/kycdao-web-sdk/dist/static/css/main.c715000a.css'
 import './kycDaoModal.css'
 import { useHistory } from "react-router";
+import { getSolanaProvider } from '../utils/getSolanaProvider'
+import '@kycdao/kycdao-web-sdk/dist/static/css/main.css'
 import '@kycdao/kycdao-web-sdk'
+
+const solanaProvider = getSolanaProvider()
 
 const KycDaoModal = (props) => {
     const location = useHistory()
-
-    const client = useRef(new KycDaoClient(
-        400,
-        650,
-        ['NearTestnet', 'PolygonMumbai', 'SolanaDevnet'],
-        ['KYC'],
-        "#kycDaoMountingPoint",
-        true,
-        false,
-        null,
-        window.location.origin
-    ))
+    const client = useRef((() => {
+        if (solanaProvider) {
+            return new window.KycDaoClient({
+                demoMode: true,
+                enabledBlockchainNetworks: ['NearTestnet', 'PolygonMumbai', 'SolanaDevnet'],
+                enabledVerificationTypes: ['KYC'],
+                height: "400px",
+                width: '650px',
+                isIframe: false,
+                parent: '#kycDaoMountingPoint',
+                messageTargetOrigin: window.location.origin,
+                onFail: () => { },
+                onSuccess: () => { },
+                url: ''
+            })
+        }
+    })())
 
     useLayoutEffect(() => {
-        client.current.onSuccess = () => {
-            location.replace('/home')
-        }
-        client.current.onFail = () => {
-            if (data !== 'cancelled') {
-                alert('Something went wrong!')
-            }
-            location.replace('/home')
-        }
-        client.current.open()
+        console.log(client.current)
 
-        return () => client.current.close()
-    }, [])
+        if (client.current) {
+            client.current.onSuccess = () => {
+                location.replace('/home')
+            }
+            client.current.onFail = () => {
+                if (data !== 'cancelled') {
+                    alert('Something went wrong!')
+                }
+                location.replace('/home')
+            }
+            client.current.open()
+
+            return () => client.current.close()
+        }
+    }, [client.current])
 
     return <div className="modal-container">
         <Helmet>
-            <title>Modal - Solana-pay-demo</title>
+            <title>Solanapyay demo</title>
             <meta property="og:title" content="Modal - Solana-pay-demo" />
         </Helmet>
         <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)', height: '100%', width: '100%' }}></div>

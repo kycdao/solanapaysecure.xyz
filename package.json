@@ -36,5 +36,5 @@
     "cross-env": "^7.0.3",
     "react-scripts": "^5.0.1"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@4.0.0-rc.26"
 }
