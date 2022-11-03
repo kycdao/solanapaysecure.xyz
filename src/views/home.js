@@ -6,6 +6,9 @@ import QRCode from "react-qr-code";
 import "./home.css";
 
 const Home = (props) => {
+  const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
+    "https://solanapaysecure.xyz/?startFlow=1"
+  )}`;
   const [modalOpen, setModalOpen] = useState(false);
 
   const toggleModal = (event) => {
@@ -13,10 +16,10 @@ const Home = (props) => {
   };
 
   const startFlow = (event) => {
-    if (typeof window.solana !== 'object') {
-      alert('cannot connect to Solana wallet')
+    if (typeof window.solana !== "object") {
+      alert("cannot connect to Solana wallet");
     }
-  }
+  };
 
   return (
     <div className="home-container">
@@ -106,10 +109,7 @@ const Home = (props) => {
                 browser.
               </h3>
               <div className="qr-code">
-                <QRCode
-                  value="https://phantom.app/ul/https://solanapaysecure.xyz/?startFlow=1"
-                  size={128}
-                />
+                <QRCode value={phantomInAppUrl} size={128} level="L" />
               </div>
             </div>
             <div className="modal-button-container">
