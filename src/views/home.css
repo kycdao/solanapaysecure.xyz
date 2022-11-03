@@ -162,7 +162,6 @@
   position: absolute;
   font-size: 40px;
   align-self: auto;
-  font-style: 75 Bold;
   text-align: left;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -180,14 +179,13 @@
 }
 
 .home-group8124 {
-  top: 58px;
-  left: 0px;
+  position: relative;
+  top: 2rem;
   width: 356px;
   height: 531px;
   margin: 2rem;
   display: flex;
   padding: 0;
-  position: absolute;
   align-self: auto;
   box-sizing: border-box;
   align-items: flex-start;
