@@ -4,9 +4,17 @@
 }
 
 @font-face {
+  font-family: 'Helvetica Neue LT Com 75 Bold ';
+  src: url('/static/media/Helvetica-Neue-LT-Com-75-Bold.woff2') format('woff2');
+}
+
+
+@font-face {
   font-family: 'Helvetica Neue LT Com 45 Light';
   src: url('/static/media/Helvetica-Neue-LT-Com-45-Light.woff2') format('woff2');
 }
+
+
 
 
 :root {
@@ -47,6 +55,7 @@
   --dl-space-space-threeunits: 48px;
   --dl-space-space-oneandhalfunits: 24px;
 }
+
 .button {
   color: var(--dl-color-gray-black);
   display: inline-block;
