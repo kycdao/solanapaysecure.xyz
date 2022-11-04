@@ -2313,9 +2313,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kycdao/kycdao-sdk@npm:^0.3.3":
-  version: 0.3.4
-  resolution: "@kycdao/kycdao-sdk@npm:0.3.4"
+"@kycdao/kycdao-sdk@npm:^0.3.5":
+  version: 0.3.5
+  resolution: "@kycdao/kycdao-sdk@npm:0.3.5"
   dependencies:
     "@solana/spl-token": "npm:^0.3.5"
     "@solana/wallet-adapter-base": "npm:^0.9.18"
@@ -2328,15 +2328,15 @@ __metadata:
     react: ^18.1.0
     react-dom: ^18.1.0
     styled-components: ^5.3.5
-  checksum: f4622cce63ba3e7e474948220cb143e3267ac4eb1b52625a91615d330631b338fef976dde6dd0526537d854998256aa0eca188e170876db2414c6b567aee8383
+  checksum: bbc7309f9f45bc1ff9bf5a682744d5ffe78e69d5947e6a2ddbd5ab499103d78d044d8799ddd2bf2a9aea59a4b196cdabd66a8a0763ddbfa7bc88741c1e431ccf
   languageName: node
   linkType: hard
 
-"@kycdao/kycdao-web-sdk@npm:0.2.3":
-  version: 0.2.3
-  resolution: "@kycdao/kycdao-web-sdk@npm:0.2.3"
+"@kycdao/kycdao-web-sdk@npm:^0.2.5":
+  version: 0.2.5
+  resolution: "@kycdao/kycdao-web-sdk@npm:0.2.5"
   dependencies:
-    "@kycdao/kycdao-sdk": "npm:^0.3.3"
+    "@kycdao/kycdao-sdk": "npm:^0.3.5"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.4.0"
     "@testing-library/user-event": "npm:^14.4.3"
@@ -2359,7 +2359,7 @@ __metadata:
     stream: "npm:0.0.2"
     styled-components: "npm:^5.3.6"
     typescript: "npm:^4.8.4"
-  checksum: 6f12dd81226d0a18f381e09e2b006af7d619c25cda72582c3d5cd50fd40891b30f4ce1fe8580c26b582238df0b9d6deedc3d876a4343b6cdc29562f099a4e13e
+  checksum: 72f4d744b9718d5385b4c42dad5c242f94a0b50bbf0bf72ae86fd54af9d0e470824589d1e96a4306d13220b540b47a701d0c490aa0297a8955548a61adac51aa
   languageName: node
   linkType: hard
 
@@ -3350,7 +3350,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@solana/web3.js@npm:^1.32.0, @solana/web3.js@npm:^1.36.0, @solana/web3.js@npm:^1.44.3, @solana/web3.js@npm:^1.61.0, @solana/web3.js@npm:^1.66.1":
+"@solana/web3.js@npm:^1.32.0, @solana/web3.js@npm:^1.36.0, @solana/web3.js@npm:^1.44.3, @solana/web3.js@npm:^1.61.0, @solana/web3.js@npm:^1.66.1, @solana/web3.js@npm:^1.66.2":
   version: 1.66.2
   resolution: "@solana/web3.js@npm:1.66.2"
   dependencies:
@@ -15010,8 +15010,10 @@ __metadata:
   resolution: "solana-pay-demo@workspace:."
   dependencies:
     "@craco/craco": "npm:^6.4.3"
-    "@kycdao/kycdao-web-sdk": "npm:0.2.3"
+    "@kycdao/kycdao-web-sdk": "npm:^0.2.5"
     "@solana/pay": "npm:^0.2.4"
+    "@solana/web3.js": "npm:^1.66.2"
+    bignumber.js: "npm:^9.1.0"
     cross-env: "npm:^7.0.3"
     prop-types: "npm:15.7.2"
     react: "npm:^17.0.2"
