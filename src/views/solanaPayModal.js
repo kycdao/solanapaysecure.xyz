@@ -12,13 +12,22 @@ const reference = new Keypair().publicKey;
 const merchant = new PublicKey(
   'H9zyRgnANdQnRGGsGEe7i6EX1qCRCYUgJP1BnTsijB5j'
 );
-const amount = new BigNumber(0.1);
+
+
+
+const usdcMainnetToken = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
+const usdcDevnetToken = 'Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr'
+
+// https://spl-token-faucet.com/?token-name=USDC-Dev to get devnet muuniez
+
+const amount = new BigNumber(1.0);
 
 const SolanaPayModal = ({ onClose }) => {
   const url = encodeURL({
     recipient: merchant,
     amount,
     reference,
+    splToken: new PublicKey(usdcDevnetToken),
     label: 'Coffee',
     message: 'Coffee',
     memo: 'Coffee#01',
