@@ -1,32 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import { Helmet } from "react-helmet";
 import solanaPay from "../utils/solana-pay";
-
 import KycDaoModal from "../views/kycDaoModal";
+import { getSolanaProvider } from "../utils/getSolanaProvider";
 
 import "./home.css";
 
+const solanaProvider = getSolanaProvider();
+const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
+  "https://solanapaysecure.xyz/?startFlow=1"
+)}`;
+
 const Home = (props) => {
-  const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
-    "https://solanapaysecure.xyz/?startFlow=1"
-  )}`;
+  const [modalOpen, setModalOpen] = useState(new URLSearchParams(window.location.search)
+    .get("startFlow") === "1");
 
-  const modalInitialState =
-    new URLSearchParams(window.location.search).get("startFlow") === "1";
+  const [kycModalOpen, setKycModalOpen] = useState(new URLSearchParams(window.location.search)
+    .get("startKyc") === "1");
 
-  const kycModalInitialState =
-    new URLSearchParams(window.location.search).get("startKyc") === "1";
+  const onSuccess = useCallback(() => {
+    
+  }, )
 
-  const [modalOpen, setModalOpen] = useState(modalInitialState);
-  const [kycModalOpen, setKycModalOpen] = useState(kycModalInitialState);
+  const onFail = useCallback((data) => {
+    if (data !== "cancelled") {
+      alert("Something went wrong!");
+    }
+    
+    setKycModalOpen(false)
+  }, [])
 
-  const toggleModal = (event) => {
-    setModalOpen(!modalOpen);
+  const toggleModal = () => {
+    setModalOpen((value) => !value);
   };
 
-  const startFlow = (event) => {
-    if (typeof window.solana !== "object") {
+  const startFlow = () => {
+    if (!solanaProvider) {
       alert("cannot connect to Solana wallet");
       return;
     }
@@ -40,20 +50,26 @@ const Home = (props) => {
     }
 
     const qrContainer = document.getElementById("mount-qr-code");
-    if (qrContainer) solanaPay.insertQrIntoDom(phantomInAppUrl, qrContainer);
 
-    return () => {
-      const qrContainer = document.getElementById("mount-qr-code");
-      if (qrContainer) {
-        qrContainer.innerHTML = "";
-      }
-    };
+    if (qrContainer) {
+      solanaPay.insertQrIntoDom({
+        url: phantomInAppUrl,
+        containerElement: qrContainer
+      });
+
+      return () => {
+        const qrContainer = document.getElementById("mount-qr-code");
+        if (qrContainer) {
+          qrContainer.innerHTML = "";
+        }
+      };
+    }
   }, [modalOpen]);
 
   return (
     <div className="home-container">
       <Helmet>
-        <title>Solana-pay-demo</title>
+        <title>SolanaPay demos</title>
         <meta property="og:title" content="Solana-pay-demo" />
       </Helmet>
       <div className="home-mac-book-air-m23">
@@ -143,7 +159,7 @@ const Home = (props) => {
         </div>
       )}
 
-      {kycModalOpen && <KycDaoModal />}
+      {kycModalOpen && <KycDaoModal onFail={onFail} onSuccess={onSuccess} />}
     </div>
   );
 };

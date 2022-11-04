@@ -1,15 +1,13 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
 import "./kycDaoModal.css";
-import { useHistory } from "react-router";
 import { getSolanaProvider } from "../utils/getSolanaProvider";
 import "@kycdao/kycdao-web-sdk/dist/static/css/main.css";
 import "@kycdao/kycdao-web-sdk";
 
 const solanaProvider = getSolanaProvider();
 
-const KycDaoModal = (props) => {
-  const location = useHistory();
+const KycDaoModal = ({ onSuccess, onFail }) => {
   const client = useRef(
     (() => {
       if (solanaProvider) {
@@ -26,34 +24,23 @@ const KycDaoModal = (props) => {
           isIframe: false,
           parent: "#kycDaoMountingPoint",
           messageTargetOrigin: window.location.origin,
-          onFail: () => {},
-          onSuccess: () => {
-            // open coffee Solana Pay QR here
-          },
-          url: "",
+          onFail,
+          onSuccess,
+          url: window.location.origin,
         });
       }
     })()
   );
 
-  useLayoutEffect(() => {
-    console.log(client.current);
+  useEffect(() => {
+    client.current.open();
 
-    if (client.current) {
-      client.current.onSuccess = () => {
-        location.replace("/home");
-      };
-      client.current.onFail = () => {
-        if (data !== "cancelled") {
-          alert("Something went wrong!");
-        }
-        location.replace("/home");
-      };
-      client.current.open();
-
-      return () => client.current.close();
+    return () => {
+      if (client.current.isOpen) {
+        client.current.close();
+      }
     }
-  }, [client.current]);
+  }, [client.current.isOpen]);
 
   return (
     <div className="modal-container">
