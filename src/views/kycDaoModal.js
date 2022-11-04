@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { Helmet } from "react-helmet";
 import "./kycDaoModal.css";
 import { getSolanaProvider } from "../utils/getSolanaProvider";
 import "@kycdao/kycdao-web-sdk/dist/static/css/main.css";
