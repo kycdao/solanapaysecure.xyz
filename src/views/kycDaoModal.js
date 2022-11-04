@@ -14,8 +14,6 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
         return new window.KycDaoClient({
           demoMode: true,
           enabledBlockchainNetworks: [
-            "NearTestnet",
-            "PolygonMumbai",
             "SolanaDevnet",
           ],
           enabledVerificationTypes: ["KYC"],
