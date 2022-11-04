@@ -27,7 +27,7 @@ const SolanaPayModal = ({ onClose }) => {
     recipient: merchant,
     amount,
     reference,
-    splToken: new PublicKey(usdcDevnetToken),
+    splToken: new PublicKey(usdcMainnetToken),
     label: 'Coffee',
     message: 'Coffee',
     memo: 'Coffee#01',
