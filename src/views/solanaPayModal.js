@@ -15,22 +15,22 @@ const merchant = new PublicKey(
 const amount = new BigNumber(0.1);
 
 const SolanaPayModal = ({ onClose }) => {
+  const url = encodeURL({
+    recipient: merchant,
+    amount,
+    reference,
+    label: 'Coffee',
+    message: 'Coffee',
+    memo: 'Coffee#01',
+  });
+
   useEffect(() => {
     const qrContainer = document.getElementById("mount-qr-code-solanapay");
-
-    const url = encodeURL({
-      recipient: merchant,
-      amount,
-      reference,
-      label: 'Coffee',
-      message: 'Coffee',
-      memo: 'Coffee#01',
-    });
 
     if (qrContainer) {
 
       solanaPay.insertQrIntoDom({
-        url: url,
+        url,
         containerElement: qrContainer,
         size: 256
       });
@@ -58,7 +58,9 @@ const SolanaPayModal = ({ onClose }) => {
         </div>
         <div className="modal-body">
           <div className="qr-code">
-            <div id="mount-qr-code-solanapay"></div>
+            <a href={url.toString()}>
+              <div id="mount-qr-code-solanapay"></div>
+            </a>
           </div>
         </div>
       </div>

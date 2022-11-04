@@ -150,7 +150,9 @@ const Home = (props) => {
                   browser.
                 </h3>
                 <div className="qr-code">
-                  <div id="mount-qr-code"></div>
+                  <a href={phantomInAppUrl}>
+                    <div id="mount-qr-code"></div>
+                    </a>
                 </div>
               </div>
               <div className="modal-button-container">
