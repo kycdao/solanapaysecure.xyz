@@ -1,63 +1,20 @@
-import { createQR, encodeURL } from '@solana/pay';
+import { encodeURL } from '@solana/pay';
 import {
-  clusterApiUrl,
-  ConfirmedSignatureInfo,
-  Connection,
   Keypair,
   PublicKey,
 } from '@solana/web3.js';
 import BigNumber from 'bignumber.js';
-import React, { useEffect, useRef } from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from "react";
 import solanaPay from "../utils/solana-pay";
 import "./solanaPayModal.css";
 
-const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
 const reference = new Keypair().publicKey;
 const merchant = new PublicKey(
   'H9zyRgnANdQnRGGsGEe7i6EX1qCRCYUgJP1BnTsijB5j'
 );
 const amount = new BigNumber(0.1);
-const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
-  "https://solanapaysecure.xyz/?startFlow=1"
-)}`;
 
-
-const SolanaPayModal = ({ onSuccess, onFail }) => {
-  const client = useRef(
-    (() => {
-      // if (solanaProvider) {
-      //   return new window.KycDaoClient({
-      //     demoMode: true,
-      //     enabledBlockchainNetworks: [
-      //       "NearTestnet",
-      //       "PolygonMumbai",
-      //       "SolanaDevnet",
-      //     ],
-      //     enabledVerificationTypes: ["KYC"],
-      //     height: "100%",
-      //     width: "100%",
-      //     isIframe: false,
-      //     parent: "#kycDaoMountingPoint",
-      //     messageTargetOrigin: window.location.origin,
-      //     onFail,
-      //     onSuccess,
-      //     url: window.location.origin,
-      //   });
-      // }
-    })()
-  );
-
-  // useEffect(() => {
-  //   client.current.open();
-
-  //   return () => {
-  //     if (client.current.isOpen) {
-  //       client.current.close();
-  //     }
-  //   }
-  // }, [client.current.isOpen]);
-
+const SolanaPayModal = ({ onClose }) => {
   useEffect(() => {
     const qrContainer = document.getElementById("mount-qr-code-solanapay");
 
@@ -70,45 +27,39 @@ const SolanaPayModal = ({ onSuccess, onFail }) => {
       memo: 'Coffee#01',
     });
 
-
     if (qrContainer) {
-      
+
       solanaPay.insertQrIntoDom({
-        url : url,
+        url: url,
         containerElement: qrContainer,
         size: 256
       });
 
-       return () => {
+      return () => {
         const qrContainer = document.getElementById("mount-qr-code-solanapay");
-         if (qrContainer) {
-           qrContainer.innerHTML = "";
-         }
-       };
+        if (qrContainer) {
+          qrContainer.innerHTML = "";
+        }
+      };
     }
   }, []);
 
 
   return (
-    <div className="modal-container">
-      <Helmet>
-        <title>SolanaPay demo</title>
-        <meta property="og:title" content="Modal - Solana-pay-demo" />
-      </Helmet>
-      <div
-        style={{ position: "absolute", zIndex: 10 }}
-        id="solanaPayMountingPoint"
-      >
-        <div className="SolanaPayModalContent">
-          <div className="modal-body">
-              <h3>
-                Scan this QR code to open this site in your wallet's in-app
-                browser.
-              </h3>
-              <div className="qr-code">
-                <div id="mount-qr-code-solanapay"></div>
-              </div>
-            </div>        
+    <div id="the-modal" className="opened">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1>Scan the QR or open this page in your Phantom mobile wallet.</h1>
+          <div onClick={onClose} className="modal-close">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+              <path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z" />
+            </svg>
+          </div>
+        </div>
+        <div className="modal-body">
+          <div className="qr-code">
+            <div id="mount-qr-code-solanapay"></div>
+          </div>
         </div>
       </div>
     </div>

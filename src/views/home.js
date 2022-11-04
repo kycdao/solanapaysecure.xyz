@@ -6,6 +6,7 @@ import KycDaoModal from "../views/kycDaoModal";
 import { getSolanaProvider } from "../utils/getSolanaProvider";
 
 import "./home.css";
+import SolanaPayModal from "./solanaPayModal";
 
 const solanaProvider = getSolanaProvider();
 const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
@@ -19,15 +20,18 @@ const Home = (props) => {
   const [kycModalOpen, setKycModalOpen] = useState(new URLSearchParams(window.location.search)
     .get("startKyc") === "1");
 
+  const [kycDaoProcessRan, setKycDaoProcessRan] = useState(false)
+
   const onSuccess = useCallback(() => {
-    
-  }, )
+    setKycDaoProcessRan(true)
+    setKycModalOpen(false)
+  }, [])
 
   const onFail = useCallback((data) => {
     if (data !== "cancelled") {
       alert("Something went wrong!");
     }
-    
+
     setKycModalOpen(false)
   }, [])
 
@@ -127,37 +131,42 @@ const Home = (props) => {
         </div>
       </div>
 
-      {modalOpen && (
-        <div id="the-modal" className="opened">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1>Connect Wallet</h1>
-              <h3>To purchase this item, your should activate you wallet.</h3>
-              <div onClick={toggleModal} className="modal-close">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
-                  <path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z" />
-                </svg>
+      {modalOpen &&
+        <>
+          {!kycDaoProcessRan && <div id="the-modal" className="opened">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h1>Connect Wallet</h1>
+                <h3>To purchase this item, your should activate you wallet.</h3>
+                <div onClick={toggleModal} className="modal-close">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+                    <path d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6Z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="modal-body">
+                <h3>
+                  Scan this QR code to open this site in your wallet's in-app
+                  browser.
+                </h3>
+                <div className="qr-code">
+                  <div id="mount-qr-code"></div>
+                </div>
+              </div>
+              <div className="modal-button-container">
+                <div onClick={startFlow} className="button-button">
+                  <span className="modal-text">
+                    <button>Connect wallet</button>
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="modal-body">
-              <h3>
-                Scan this QR code to open this site in your wallet's in-app
-                browser.
-              </h3>
-              <div className="qr-code">
-                <div id="mount-qr-code"></div>
-              </div>
-            </div>
-            <div className="modal-button-container">
-              <div onClick={startFlow} className="button-button">
-                <span className="modal-text">
-                  <button>Connect wallet</button>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+          </div>}
+          {
+            kycDaoProcessRan && <SolanaPayModal onClose={toggleModal} />
+          }
+        </>
+      }
 
       {kycModalOpen && <KycDaoModal onFail={onFail} onSuccess={onSuccess} />}
     </div>

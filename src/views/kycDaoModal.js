@@ -44,10 +44,6 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
 
   return (
     <div className="modal-container">
-      <Helmet>
-        <title>SolanaPay demo</title>
-        <meta property="og:title" content="Modal - Solana-pay-demo" />
-      </Helmet>
       <div
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.7)",

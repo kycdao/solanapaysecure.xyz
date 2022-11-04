@@ -293,7 +293,7 @@
 }
 
 #the-modal .modal-content {
-  width: 460px;
+  width: 500px;
   background: var(--dl-color-default-darkest);
   padding: 2rem;
   border-top: 2px solid var(--dl-color-default-green);
