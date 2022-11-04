@@ -2332,9 +2332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kycdao/kycdao-web-sdk@npm:^0.2.5":
-  version: 0.2.5
-  resolution: "@kycdao/kycdao-web-sdk@npm:0.2.5"
+"@kycdao/kycdao-web-sdk@npm:^0.2.6":
+  version: 0.2.6
+  resolution: "@kycdao/kycdao-web-sdk@npm:0.2.6"
   dependencies:
     "@kycdao/kycdao-sdk": "npm:^0.3.5"
     "@testing-library/jest-dom": "npm:^5.16.5"
@@ -2359,7 +2359,7 @@ __metadata:
     stream: "npm:0.0.2"
     styled-components: "npm:^5.3.6"
     typescript: "npm:^4.8.4"
-  checksum: 72f4d744b9718d5385b4c42dad5c242f94a0b50bbf0bf72ae86fd54af9d0e470824589d1e96a4306d13220b540b47a701d0c490aa0297a8955548a61adac51aa
+  checksum: 392b1b9ae470e82db5d23039b0cfbf5721c65daa89e9c7bcfd0d915a3098e1d4f0c814252822b35c4f81f1e5d0cce892e9c7e3062666a81f157a590f58ad495d
   languageName: node
   linkType: hard
 
@@ -15010,7 +15010,7 @@ __metadata:
   resolution: "solana-pay-demo@workspace:."
   dependencies:
     "@craco/craco": "npm:^6.4.3"
-    "@kycdao/kycdao-web-sdk": "npm:^0.2.5"
+    "@kycdao/kycdao-web-sdk": "npm:^0.2.6"
     "@solana/pay": "npm:^0.2.4"
     "@solana/web3.js": "npm:^1.66.2"
     bignumber.js: "npm:^9.1.0"
