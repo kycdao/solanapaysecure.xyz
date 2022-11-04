@@ -10,7 +10,7 @@ import "./solanaPayModal.css";
 
 const reference = new Keypair().publicKey;
 const merchant = new PublicKey(
-  'H9zyRgnANdQnRGGsGEe7i6EX1qCRCYUgJP1BnTsijB5j'
+  'yNW2jynYCKjiwC28hoFj3cAaLVJZDo2z8cTfu24k2P5'
 );
 
 
