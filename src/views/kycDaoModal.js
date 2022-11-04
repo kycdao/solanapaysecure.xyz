@@ -13,7 +13,7 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
         return new window.KycDaoClient({
           demoMode: true,
           enabledBlockchainNetworks: [
-            "SolanaDevnet",
+            "SolanaMainnet",
           ],
           enabledVerificationTypes: ["KYC"],
           height: "100%",
