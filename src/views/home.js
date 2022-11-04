@@ -83,11 +83,13 @@ const Home = (props) => {
             src="/playground_assets/solanapay-logo.svg"
             className="home-image"
           />
+          { /*
           <div className="home-button">
             <span className="home-text">
               <span>Connect wallet</span>
             </span>
           </div>
+          */ }
         </div>
         <div className="container home-frame8126">
           <div className="home-container1">
