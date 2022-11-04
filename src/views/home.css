@@ -293,7 +293,7 @@
 }
 
 #the-modal .modal-content {
-  width: 500px;
+  width: 460px;
   background: var(--dl-color-default-darkest);
   padding: 2rem;
   border-top: 2px solid var(--dl-color-default-green);
@@ -301,6 +301,10 @@
 
 .modal-header {
   position: relative;
+}
+
+.modal-header > h1 {
+  max-width: 280px;
 }
 
 .modal-header .modal-close {
