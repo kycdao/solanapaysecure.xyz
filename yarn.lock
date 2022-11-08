@@ -2332,9 +2332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kycdao/kycdao-web-sdk@file:/home/attilav/codes/web-sdk::locator=solana-pay-demo%40workspace%3A.":
-  version: 0.2.11
-  resolution: "@kycdao/kycdao-web-sdk@file:/home/attilav/codes/web-sdk#/home/attilav/codes/web-sdk::hash=9ae7af&locator=solana-pay-demo%40workspace%3A."
+"@kycdao/kycdao-web-sdk@npm:^0.2.12":
+  version: 0.2.12
+  resolution: "@kycdao/kycdao-web-sdk@npm:0.2.12"
   dependencies:
     "@kycdao/kycdao-sdk": "npm:^0.3.5"
     "@testing-library/jest-dom": "npm:^5.16.5"
@@ -2359,7 +2359,7 @@ __metadata:
     stream: "npm:0.0.2"
     styled-components: "npm:^5.3.6"
     typescript: "npm:^4.8.4"
-  checksum: 3b257cf890211c694336cecf13314f29629d6b01f846223b48e0f9dc5080cba408d63a4eb8e567e9e65e3b41df3ebfe6de7659c83ad59a8d03cc8acd0fa920b8
+  checksum: 722d481adf145c0fa724bc95a0dd80a3d4207ef1cdc03c573bcffba19637b2e45006a39d3d40522f97265802d654534524ad4726decf3685b05e01b3a8fafa29
   languageName: node
   linkType: hard
 
@@ -8934,7 +8934,7 @@ __metadata:
 
 "fsevents@patch:fsevents@npm%3A^2.3.2#optional!builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#optional!builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
@@ -14344,7 +14344,7 @@ __metadata:
 
 "resolve@patch:resolve@npm%3A^1.1.7#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.19.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.1#optional!builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#optional!builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#optional!builtin<compat/resolve>::version=1.22.1&hash=07638b"
   dependencies:
     is-core-module: "npm:^2.9.0"
     path-parse: "npm:^1.0.7"
@@ -14357,7 +14357,7 @@ __metadata:
 
 "resolve@patch:resolve@npm%3A^2.0.0-next.3#optional!builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#optional!builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#optional!builtin<compat/resolve>::version=2.0.0-next.4&hash=07638b"
   dependencies:
     is-core-module: "npm:^2.9.0"
     path-parse: "npm:^1.0.7"
@@ -15010,7 +15010,7 @@ __metadata:
   resolution: "solana-pay-demo@workspace:."
   dependencies:
     "@craco/craco": "npm:^6.4.3"
-    "@kycdao/kycdao-web-sdk": /home/attilav/codes/web-sdk
+    "@kycdao/kycdao-web-sdk": "npm:^0.2.12"
     "@solana/pay": "npm:^0.2.4"
     "@solana/web3.js": "npm:^1.66.2"
     bignumber.js: "npm:^9.1.0"
@@ -15988,7 +15988,7 @@ __metadata:
 
 "typescript@patch:typescript@npm%3A^4.6.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^4.8.4#optional!builtin<compat/typescript>":
   version: 4.8.4
-  resolution: "typescript@patch:typescript@npm%3A4.8.4#optional!builtin<compat/typescript>::version=4.8.4&hash=0102e9"
+  resolution: "typescript@patch:typescript@npm%3A4.8.4#optional!builtin<compat/typescript>::version=4.8.4&hash=701156"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
