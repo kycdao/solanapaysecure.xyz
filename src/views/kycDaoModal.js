@@ -14,10 +14,12 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
           config: {
             demoMode: true,
             enabledBlockchainNetworks: [
-              "SolanaDevnet",
+              //"SolanaDevnet",
+              "SolanaMainnet"
             ],
             enabledVerificationTypes: ["KYC"],
-            baseUrl: "https://staging.kycdao.xyz"
+            // baseUrl: "https://staging.kycdao.xyz"
+            baseUrl: "https://prod-test.kycdao.xyz"
           },
           height: "100%",
           width: "100%",
