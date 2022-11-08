@@ -13,8 +13,6 @@ const merchant = new PublicKey(
   'yNW2jynYCKjiwC28hoFj3cAaLVJZDo2z8cTfu24k2P5'
 );
 
-
-
 const usdcMainnetToken = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
 const usdcDevnetToken = 'Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr'
 

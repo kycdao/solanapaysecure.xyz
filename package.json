@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
-    "@kycdao/kycdao-web-sdk": "^0.2.11",
+    "@kycdao/kycdao-web-sdk": "^0.2.12",
     "@solana/pay": "^0.2.4",
     "@solana/web3.js": "^1.66.2",
     "bignumber.js": "^9.1.0",
@@ -19,9 +19,7 @@
     "start": "cross-env GENERATE_SOURCEMAP=false craco start",
     "build": "craco build",
     "test": "craco test --env=jsdom",
-    "eject": "craco eject",
-    "sdk": "yarn add @kycdao/kycdao-web-sdk@/home/attilav/codes/web-sdk",
-    "sdk:reinstall": "yarn remove @kycdao/kycdao-web-sdk && yarn add @kycdao/kycdao-web-sdk@/home/attilav/codes/web-sdk"
+    "eject": "craco eject"
   },
   "browserslist": {
     "production": [

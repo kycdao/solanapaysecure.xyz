@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import "./kycDaoModal.css";
 import { getSolanaProvider } from "../utils/getSolanaProvider";
-import "@kycdao/kycdao-web-sdk/dist/static/css/main.css";
 import "@kycdao/kycdao-web-sdk";
+import "@kycdao/kycdao-web-sdk/dist/index.css";
 
 const solanaProvider = getSolanaProvider();
 
@@ -11,16 +11,17 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
     (() => {
       if (solanaProvider) {
         return new window.KycDaoClient({
-          demoMode: true,
-          enabledBlockchainNetworks: [
-            "SolanaMainnet",
-          ],
-          enabledVerificationTypes: ["KYC"],
+          config: {
+            demoMode: true,
+            enabledBlockchainNetworks: [
+              "SolanaDevnet",
+            ],
+            enabledVerificationTypes: ["KYC"],
+            baseUrl: "https://staging.kycdao.xyz"
+          },
           height: "100%",
           width: "100%",
-          isIframe: false,
           parent: "#kycDaoMountingPoint",
-          messageTargetOrigin: window.location.origin,
           onFail,
           onSuccess,
           url: window.location.origin,

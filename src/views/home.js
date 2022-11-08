@@ -24,7 +24,7 @@ const Home = (props) => {
 
   const onSuccess = useCallback(() => {
     setKycDaoProcessRan(true)
-    setKycModalOpen(false)
+    console.log("The process successfully ran! ")
   }, [])
 
   const onFail = useCallback((data) => {
@@ -33,6 +33,7 @@ const Home = (props) => {
     }
 
     setKycModalOpen(false)
+    console.log({ reason: data })
   }, [])
 
   const toggleModal = () => {

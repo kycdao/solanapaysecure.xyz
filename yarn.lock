@@ -2332,9 +2332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kycdao/kycdao-web-sdk@npm:^0.2.11":
+"@kycdao/kycdao-web-sdk@file:/home/attilav/codes/web-sdk::locator=solana-pay-demo%40workspace%3A.":
   version: 0.2.11
-  resolution: "@kycdao/kycdao-web-sdk@npm:0.2.11"
+  resolution: "@kycdao/kycdao-web-sdk@file:/home/attilav/codes/web-sdk#/home/attilav/codes/web-sdk::hash=9ae7af&locator=solana-pay-demo%40workspace%3A."
   dependencies:
     "@kycdao/kycdao-sdk": "npm:^0.3.5"
     "@testing-library/jest-dom": "npm:^5.16.5"
@@ -2359,7 +2359,7 @@ __metadata:
     stream: "npm:0.0.2"
     styled-components: "npm:^5.3.6"
     typescript: "npm:^4.8.4"
-  checksum: c7163bdb28289d5ff7958c0aaec17a6f1bab7d73d95ce1726ec7e7fcfb91d06e625691327cf23182225ee1df8e3774d0fd8b79177c0d07d53d82a3a5f256ca3d
+  checksum: 3b257cf890211c694336cecf13314f29629d6b01f846223b48e0f9dc5080cba408d63a4eb8e567e9e65e3b41df3ebfe6de7659c83ad59a8d03cc8acd0fa920b8
   languageName: node
   linkType: hard
 
@@ -4174,12 +4174,12 @@ __metadata:
   linkType: hard
 
 "@types/jest@npm:*, @types/jest@npm:^29.2.0":
-  version: 29.2.1
-  resolution: "@types/jest@npm:29.2.1"
+  version: 29.2.2
+  resolution: "@types/jest@npm:29.2.2"
   dependencies:
     expect: "npm:^29.0.0"
     pretty-format: "npm:^29.0.0"
-  checksum: b3d3be3c7cbf5151ab193ed7f641492027bbdb899e2c6edfe784d973063c5495278fb2fef3f0fec77c8f79e527f96f9b9b3927f57c4ffef4cf206868a5d0339a
+  checksum: a9e99292fda36fb3a23c62f2c4db274a3a3bf3c9033db18e1b70ab20cd1634f24851a5120d0465bdd2f0e125e21336c20ff7bc36071e1befda39cbf5300c19ba
   languageName: node
   linkType: hard
 
@@ -4279,13 +4279,13 @@ __metadata:
   linkType: hard
 
 "@types/react@npm:*, @types/react@npm:^18.0.23":
-  version: 18.0.24
-  resolution: "@types/react@npm:18.0.24"
+  version: 18.0.25
+  resolution: "@types/react@npm:18.0.25"
   dependencies:
     "@types/prop-types": "npm:*"
     "@types/scheduler": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 4ef5bc8353a28fe7343bc429b91cf7d72e26fea49868ac5f874b963c928fa29806b853bb1bf25d857043fe46edd88846a76138faa47111727caee4428e8529f0
+  checksum: af960f03dd2ab8cf51789d09c13c440fcc505a6e22101d9c58a4f4ad562cd81122ff345cc9bf8d131d68c185ee1a48411d62e90d3dbaa9623abd0b2564f7b5fe
   languageName: node
   linkType: hard
 
@@ -12385,8 +12385,8 @@ __metadata:
   linkType: hard
 
 "persona@npm:^4.6.0":
-  version: 4.6.0
-  resolution: "persona@npm:4.6.0"
+  version: 4.7.0
+  resolution: "persona@npm:4.7.0"
   dependencies:
     core-js: "npm:^3.0.0"
     lodash: "npm:^4.17.21"
@@ -12395,7 +12395,7 @@ __metadata:
     react: ">= 16"
     react-dom: ">= 16"
     styled-components: ">= 4"
-  checksum: 92555731fb4ad6007e5a3afae66aa622e999b6cf2121687b39401ef316de8c685b30ef57f5a8ed35d5ceb016c67129aa11309add4e0a89fc41d9314e6c181839
+  checksum: 6eb2cb815edbdbc0a542966eb663bb0cdb6c1837c5173d08d0196e83b9fbb00edf3a691ef0b28913293ca41830555a9519c0ff3b2076815e88dc83a7850d199f
   languageName: node
   linkType: hard
 
@@ -14588,15 +14588,15 @@ __metadata:
   linkType: hard
 
 "sass@npm:^1.55.0":
-  version: 1.55.0
-  resolution: "sass@npm:1.55.0"
+  version: 1.56.0
+  resolution: "sass@npm:1.56.0"
   dependencies:
     chokidar: "npm:>=3.0.0 <4.0.0"
     immutable: "npm:^4.0.0"
     source-map-js: "npm:>=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: e05c3462e4e0ec1b4dd7d6a7107768209ef02f37a9a6e9d15d1473cf9993eb2f8e69ae53cb30fca9bb416a17818d3aab9156b2622b7703e0a0d344b9eaef6128
+  checksum: 753393f7d4f8c1e5839894f6892a9b76126563fe2f85327d4009a8877ac4e035503bc413ec2019fa6cff9b876fe52db6e07b2e0522eac6340f87129a46572ff5
   languageName: node
   linkType: hard
 
@@ -15010,7 +15010,7 @@ __metadata:
   resolution: "solana-pay-demo@workspace:."
   dependencies:
     "@craco/craco": "npm:^6.4.3"
-    "@kycdao/kycdao-web-sdk": "npm:^0.2.11"
+    "@kycdao/kycdao-web-sdk": /home/attilav/codes/web-sdk
     "@solana/pay": "npm:^0.2.4"
     "@solana/web3.js": "npm:^1.66.2"
     bignumber.js: "npm:^9.1.0"
