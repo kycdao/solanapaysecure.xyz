@@ -1,20 +1,15 @@
-import { encodeURL } from '@solana/pay';
-import {
-  Keypair,
-  PublicKey,
-} from '@solana/web3.js';
-import BigNumber from 'bignumber.js';
+import { encodeURL } from "@solana/pay";
+import { Keypair, PublicKey } from "@solana/web3.js";
+import BigNumber from "bignumber.js";
 import React, { useEffect } from "react";
 import solanaPay from "../utils/solana-pay";
 import "./solanaPayModal.css";
 
 const reference = new Keypair().publicKey;
-const merchant = new PublicKey(
-  'yNW2jynYCKjiwC28hoFj3cAaLVJZDo2z8cTfu24k2P5'
-);
+const merchant = new PublicKey("yNW2jynYCKjiwC28hoFj3cAaLVJZDo2z8cTfu24k2P5");
 
-const usdcMainnetToken = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
-const usdcDevnetToken = 'Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr'
+const usdcMainnetToken = "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v";
+const usdcDevnetToken = "Gh9ZwEmdLJ8DscKNTkTqPbNwLNNBjuSzaG9Vp2KGtKJr";
 
 // https://spl-token-faucet.com/?token-name=USDC-Dev to get devnet muuniez
 
@@ -26,20 +21,19 @@ const SolanaPayModal = ({ onClose }) => {
     amount,
     reference,
     splToken: new PublicKey(usdcMainnetToken),
-    label: 'Coffee',
-    message: 'Coffee',
-    memo: 'Coffee#01',
+    label: "Coffee",
+    message: "Coffee",
+    memo: "Coffee#01",
   });
 
   useEffect(() => {
     const qrContainer = document.getElementById("mount-qr-code-solanapay");
 
     if (qrContainer) {
-
       solanaPay.insertQrIntoDom({
         url,
         containerElement: qrContainer,
-        size: 256
+        size: 256,
       });
 
       return () => {
@@ -50,7 +44,6 @@ const SolanaPayModal = ({ onClose }) => {
       };
     }
   }, []);
-
 
   return (
     <div id="the-modal" className="opened">
