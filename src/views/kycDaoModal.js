@@ -52,7 +52,7 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
         }}
       ></div>
       <div
-        style={{ position: "absolute", zIndex: 10 }}
+        style={{ position: "absolute", top: 0, left: 0, bottom: 0, right: 0, zIndex: 10 }}
         id="kycDaoMountingPoint"
       ></div>
     </div>
