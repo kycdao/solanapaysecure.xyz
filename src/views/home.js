@@ -128,7 +128,7 @@ const Home = () => {
 								<h3>1 USDC</h3>
 							</div>
 							<img
-								alt="Its a coffe mug, in a dark background, loosk pretty delicious."
+								alt="Its a coffee mug, in a dark background, looks pretty delicious."
 								src="/playground_assets/solana-coffe.png"
 								className="home-image2"
 							/>
