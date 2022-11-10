@@ -1,0 +1,44 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/jsx-runtime",
+        "prettier",
+        "react-app",
+        "react-app/jest"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "src/**/*.ts",
+                "src/**/*.tsx"
+            ]
+        }
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-empty-function": "warn",
+        "prettier/prettier": 1
+    },
+    "settings": {
+        "react": {
+            "version": "18.2.0"
+        }
+    },
+    "ignorePatterns": ["config-overrides.js"]
+}

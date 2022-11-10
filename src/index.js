@@ -1,18 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import ReactDOM from "react-dom"
+import { BrowserRouter as Router, Route } from "react-router-dom"
 
-import './style.css'
-import Home from './views/home'
+import "./style.css"
+import Home from "./views/home"
 
 const App = () => {
-  return (
-    <Router>
-      <div>
-        <Route component={Home} exact path="/" />
-      </div>
-    </Router>
-  )
+	return (
+		<Router>
+			<div>
+				<Route component={Home} exact path="/" />
+			</div>
+		</Router>
+	)
 }
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById("app"))

@@ -1,0 +1,5 @@
+/src/**/*.css
+/src/**/*.scss
+/src/**/*.woff*
+/src/**/*.svg
+craco.config.js
