@@ -44,7 +44,7 @@ const Home = () => {
 	}
 
 	const startFlow = () => {
-		if (!solanaProvider) {
+		if (!solanaProvider.current) {
 			alert("cannot connect to Solana wallet")
 			return
 		}

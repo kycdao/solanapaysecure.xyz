@@ -10,7 +10,7 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
 
 	const client = useRef(
 		(() => {
-			if (solanaProvider) {
+			if (solanaProvider.current) {
 				return new window.KycDaoClient({
 					config: {
 						demoMode: true,
@@ -36,14 +36,16 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
 	useEffect(() => {
 		const currentClient = client.current
 
-		currentClient.open()
+		if (currentClient) {
+			currentClient.open()
 
-		return () => {
-			if (currentClient.isOpen) {
-				currentClient.close()
+			return () => {
+				if (currentClient.isOpen) {
+					currentClient.close()
+				}
 			}
 		}
-	}, [client.current.isOpen])
+	}, [client.current?.isOpen])
 
 	return (
 		<div className="modal-container">
