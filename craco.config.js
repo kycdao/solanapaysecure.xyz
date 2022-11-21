@@ -1,4 +1,5 @@
 const fs = require("fs")
+const webpack = require("webpack")
 
 module.exports = {
 	reactScriptsVersion: "react-scripts",
@@ -18,4 +19,20 @@ module.exports = {
 		},
 	},
 	prettier: "^2.7.1",
+	webpack: {
+		configure: {
+			plugins: [
+				new webpack.ProvidePlugin({
+					process: "process/browser",
+					Buffer: ["buffer", "Buffer"],
+					ethereum: ["ethereum", "ethereum"]
+				}),
+			],
+			resolve: {
+				fallback: {
+					crypto: require.resolve("crypto-browserify")
+				}
+			}
+		}
+	},
 }

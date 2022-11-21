@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react"
 import "./kycDaoModal.css"
 import { getSolanaProvider } from "../utils/getSolanaProvider"
 import "@kycdao/kycdao-web-sdk"
-import "@kycdao/kycdao-web-sdk/dist/index.css"
 import PropTypes from "prop-types"
 
 const KycDaoModal = ({ onSuccess, onFail }) => {
@@ -22,8 +21,8 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
 						// baseUrl: "https://staging.kycdao.xyz"
 						baseUrl: "https://prod-test.kycdao.xyz",
 					},
-					height: "100%",
-					width: "100%",
+					height: "650px",
+					width: "400px",
 					parent: "#kycDaoMountingPoint",
 					onFail,
 					onSuccess,
@@ -49,12 +48,6 @@ const KycDaoModal = ({ onSuccess, onFail }) => {
 
 	return (
 		<div className="modal-container">
-			<div
-				style={{
-					backgroundColor: "rgba(0, 0, 0, 0.7)",
-					height: "100%",
-					width: "100%",
-				}}></div>
 			<div
 				style={{
 					position: "absolute",
