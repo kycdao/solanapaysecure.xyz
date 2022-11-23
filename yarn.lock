@@ -2332,9 +2332,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kycdao/kycdao-web-sdk@npm:0.3.0-rc.4":
-  version: 0.3.0-rc.4
-  resolution: "@kycdao/kycdao-web-sdk@npm:0.3.0-rc.4"
+"@kycdao/kycdao-web-sdk@npm:0.3.0-rc.7":
+  version: 0.3.0-rc.7
+  resolution: "@kycdao/kycdao-web-sdk@npm:0.3.0-rc.7"
   dependencies:
     "@kycdao/kycdao-sdk": "npm:^0.3.5"
     "@testing-library/jest-dom": "npm:^5.16.5"
@@ -2358,7 +2358,7 @@ __metadata:
     sass: "npm:^1.56.1"
     stream: "npm:0.0.2"
     styled-components: "npm:^5.3.6"
-  checksum: 00f975e7c68f9c504d11ee6681ee4734d17b803a73c10a2b76ffdea30075f0cd76138c79e4379f572a24f89a283714b84bc93d63dac92760302ee7b739c2281e
+  checksum: 024f48195ac6d6ee30c8d7f77080b569031f3b54a9c91ae4fc3ae197ad3e3616c7b23e1c98ade47f46a563787df01e8fc0b8026237573272a23a623cfe27b87c
   languageName: node
   linkType: hard
 
@@ -15187,18 +15187,18 @@ __metadata:
   linkType: hard
 
 "socket.io-client@npm:^4.5.3":
-  version: 4.5.3
-  resolution: "socket.io-client@npm:4.5.3"
+  version: 4.5.4
+  resolution: "socket.io-client@npm:4.5.4"
   dependencies:
     "@socket.io/component-emitter": "npm:~3.1.0"
     debug: "npm:~4.3.2"
     engine.io-client: "npm:~6.2.3"
-    socket.io-parser: "npm:~4.2.0"
-  checksum: ae51fc34950d50f5ce2eac79bea1ed165ef91aaf2214e6a6ffc9a9664021dee30aa77bd3e82ac196eb526cf0aa8b17c865fe12e7b37450bbc28bc3746176f6c6
+    socket.io-parser: "npm:~4.2.1"
+  checksum: 44988ca5d1686520393a496172b6b4111768e0edcd2a8190d3b782a6223fc67d8dde23808347c25cc0e5b0543a124c1097aecb80bc36f444f56de1c94cafccff
   languageName: node
   linkType: hard
 
-"socket.io-parser@npm:~4.2.0":
+"socket.io-parser@npm:~4.2.1":
   version: 4.2.1
   resolution: "socket.io-parser@npm:4.2.1"
   dependencies:
@@ -15245,7 +15245,7 @@ __metadata:
   resolution: "solana-pay-demo@workspace:."
   dependencies:
     "@craco/craco": "npm:^6.4.3"
-    "@kycdao/kycdao-web-sdk": "npm:0.3.0-rc.4"
+    "@kycdao/kycdao-web-sdk": "npm:0.3.0-rc.7"
     "@solana/pay": "npm:^0.2.4"
     "@solana/web3.js": "npm:^1.66.2"
     "@typescript-eslint/eslint-plugin": "npm:latest"
