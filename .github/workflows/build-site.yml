@@ -9,6 +9,7 @@ jobs:
         with:
           node-version: 18.14.0
           cache: 'yarn'
+      - run: corepack enable
       - run: yarn install --immutable
       - run: yarn build
       - uses: actions/upload-pages-artifact@v1
