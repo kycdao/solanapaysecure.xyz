@@ -9,7 +9,7 @@ import "./home.css"
 import SolanaPayModal from "./solanaPayModal"
 
 const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
-	"https://solanapaysecure.xyz/?startFlow=1"
+	"https://solanapaysecure.kycdao.xyz/?startFlow=1"
 )}`
 
 const Home = () => {
