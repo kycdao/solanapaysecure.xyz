@@ -1,13 +1,12 @@
 import React, { useCallback, useEffect, useState, useRef } from "react"
 import { KycDaoClient } from "@kycdao/widget"
-import { BlockchainNetwork, BlockchainNetworks } from "@kycdao/kycdao-sdk"
 import { InsertQrIntoDom } from "./utils/solana-pay"
 import "./home.css"
 import SolanaPayModal from "./solanaPayModal"
 
-import solanaPayLogo from "./assets/solanapay-logo.svg"
-import solanaCoffee from "./assets/solana-coffe.png"
-import bgFrame from "./assets/frame3451-pky.svg"
+import solanaPayLogo from "assets/solanapay-logo.svg"
+import solanaCoffee from "assets/solana-coffe.png"
+import bgFrame from "assets/frame3451-pky.svg"
 
 const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
 	"https://solanapaysecure.kycdao.xyz/?startFlow=1"
