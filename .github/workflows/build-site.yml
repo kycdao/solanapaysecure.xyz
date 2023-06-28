@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.14.0
-          cache: 'pnpm'
+          # cache: 'pnpm'
       - run: corepack enable
       - run: pnpm install
       - run: pnpm build
