@@ -10,7 +10,7 @@ jobs:
           node-version: 18.14.0
           # cache: 'pnpm'
       - run: corepack enable
-      - run: pnpm install
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm build
       - uses: actions/upload-pages-artifact@v1
         with:
