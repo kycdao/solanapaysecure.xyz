@@ -1,19 +1,23 @@
-import { useCallback, useEffect, useRef, useState } from "react"
-
-import { Helmet } from "react-helmet"
-import { InsertQrIntoDom } from "../utils/solana-pay"
-import KycDaoModal from "../views/kycDaoModal"
-import { getSolanaProvider } from "../utils/getSolanaProvider"
-
+import React, { useCallback, useEffect, useState, useRef } from "react"
+import { KycDaoClient } from "@kycdao/widget"
+import { BlockchainNetwork, BlockchainNetworks } from "@kycdao/kycdao-sdk"
+// import { Helmet } from "react-helmet"
+import { InsertQrIntoDom } from "./utils/solana-pay"
+// import getSolanaProvider from "./utils/getSolanaProvider"
 import "./home.css"
 import SolanaPayModal from "./solanaPayModal"
+
+// const StyledKycDaoModal = styled(KycDaoWidget)``
+
+import solanaPayLogo from "./assets/solanapay-logo.svg"
+import solanaCoffee from "./assets/solana-coffe.png"
+import bgFrame from "./assets/frame3451-pky.svg"
 
 const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
 	"https://solanapaysecure.kycdao.xyz/?startFlow=1"
 )}`
-
-const Home = () => {
-	const solanaProvider = useRef(getSolanaProvider())
+const App: React.FC = () => {
+	// const solanaProvider = useRef(getSolanaProvider())
 
 	const [modalOpen, setModalOpen] = useState(
 		new URLSearchParams(window.location.search).get("startFlow") === "1"
@@ -25,29 +29,32 @@ const Home = () => {
 
 	const [kycDaoProcessRan, setKycDaoProcessRan] = useState(false)
 
-	const onSuccess = useCallback(() => {
-		setKycDaoProcessRan(true)
-		console.log("The process successfully ran! ")
-	}, [])
+	// const onSuccess = useCallback((txUrl) => {
+	// 	console.log("Completed, tx: ", { txUrl })
+	// 	setKycDaoProcessRan(true)
+	// 	console.log("The process successfully ran! ")
+	// }, [])
 
-	const onFail = useCallback((data) => {
-		if (data !== "cancelled") {
-			alert("Something went wrong!")
-		}
+	// const onFail = useCallback((data) => {
+	// 	if (data !== "cancelled") {
+	// 		alert("Something went wrong!")
+	// 	}
 
-		setKycModalOpen(false)
-		console.log({ reason: data })
-	}, [])
+	// 	setKycModalOpen(false)
+	// 	console.log({ reason: data })
+	// }, [])
 
 	const toggleModal = () => {
 		setModalOpen((value) => !value)
 	}
 
 	const startFlow = () => {
-		if (!solanaProvider.current) {
-			alert("cannot connect to Solana wallet")
-			return
-		}
+		// if (!solanaProvider.current) {
+		// 	alert("cannot connect to Solana wallet")
+		// 	return
+		// }
+
+		console.log("starting flow")
 
 		setKycModalOpen(true)
 	}
@@ -72,19 +79,80 @@ const Home = () => {
 				}
 			}
 		}
-	}, [modalOpen])
+	}, [modalOpen])  
+  
+  const [client, setClient] = useState<KycDaoClient>()
+  useEffect(() => {
+    const newClient = new KycDaoClient({
+      parent: "#modalRoot",
+      modal: true,
+      backdrop: true,
+      config: {
+        demoMode: true,
+        enabledBlockchainNetworks: [
+          "SolanaDevnet",
+        ],
+        enabledVerificationTypes: ["KYC"],
+        evmProvider: window.ethereum,
+        baseUrl: "https://staging.kycdao.xyz",
+      },
+      onReady: (sdkInstance) => {
+        // eslint-disable-next-line prefer-const
+        let nftCheckInterval: NodeJS.Timer
 
-	return (
-		<div className="home-container">
-			<Helmet>
+        function writeNFT() {
+          if (sdkInstance.kycDao.connectedWallet) {
+            sdkInstance.kycDao
+              .hasValidNft("KYC")
+              .then((value) => {
+                console.log(
+                  `This wallet ${value ? "has" : "has not"} a valid nft.`
+                )
+              })
+              .catch(console.error)
+            clearInterval(nftCheckInterval)
+          }
+        }
+
+        nftCheckInterval = setInterval(writeNFT, 1000)
+      },
+      onSuccess: (data) => {
+		console.log("Completed, tx: ", { data })
+		setKycDaoProcessRan(true)
+
+        if (data) {
+          const i = /Already has an nft on (.*)\./g.exec(data)
+
+          if (i) {
+            console.log(`Already has an nft on ${i[1]}.`)
+          }
+        }
+      },
+    })
+
+    setClient(newClient)
+  }, [])
+
+  const open = useCallback(
+    (selectedChain: BlockchainNetwork) => {
+      client?.open(selectedChain, window.ethereum)
+    },
+    [client]
+  )
+
+  return (
+    <>
+      <div id="modalRoot"></div>
+      <div className="home-container">
+			{/* <Helmet>
 				<title>SolanaPay demos</title>
 				<meta property="og:title" content="Solana-pay-demo" />
-			</Helmet>
+			</Helmet> */}
 			<div className="home-mac-book-air-m23">
 				<div className="container home-frame8191">
 					<img
 						alt="solana logo"
-						src="/playground_assets/solanapay-logo.svg"
+						src={solanaPayLogo}
 						className="home-image"
 					/>
 					{/*
@@ -119,7 +187,7 @@ const Home = () => {
 							</span>
 							<img
 								alt="Frame3451"
-								src="/playground_assets/frame3451-pky.svg"
+								src={bgFrame}
 								className="home-frame"
 							/>
 						</div>
@@ -129,7 +197,7 @@ const Home = () => {
 							</div>
 							<img
 								alt="Its a coffee mug, in a dark background, looks pretty delicious."
-								src="/playground_assets/solana-coffe.png"
+								src={solanaCoffee}
 								className="home-image2"
 							/>
 						</div>
@@ -168,7 +236,7 @@ const Home = () => {
 									</div>
 								</div>
 								<div className="modal-button-container">
-									<div onClick={startFlow} className="button-button">
+									<div onClick={() => open(BlockchainNetworks.SolanaDevnet)} className="button-button">
 										<span className="modal-text">
 											<button>Connect wallet</button>
 										</span>
@@ -180,10 +248,9 @@ const Home = () => {
 					{kycDaoProcessRan && <SolanaPayModal onClose={toggleModal} />}
 				</>
 			)}
-
-			{kycModalOpen && <KycDaoModal onFail={onFail} onSuccess={onSuccess} />}
-		</div>
-	)
+		</div>      
+    </>
+  )
 }
 
-export default Home
+export default App

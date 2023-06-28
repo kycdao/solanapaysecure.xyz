@@ -1,12 +1,11 @@
-import QRCodeStyling from "@solana/qr-code-styling"
-
 // import { createQROptions } from "@solana/pay";
 
-export const InsertQrIntoDom = ({ url, containerElement, size = 256 }) => {
-	//const opts = createQROptions(url, size)
+import QRCodeStyling, { DrawType, Options } from "@solana/qr-code-styling"
+
+export const InsertQrIntoDom = ({ url, containerElement, size = 256 }: { url: string, containerElement: HTMLElement, size?: number }) => {
 	const color = "black"
-	const opts = {
-		type: "canvas",
+	const opts: Partial<Options> = {
+		// type: DrawType["canvas"],
 		width: size,
 		height: size,
 		data: String(url),
