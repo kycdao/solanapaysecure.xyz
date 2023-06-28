@@ -8,13 +8,13 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.14.0
-          cache: 'yarn'
+          cache: 'pnpm'
       - run: corepack enable
-      - run: yarn install --immutable
-      - run: yarn build
+      - run: pnpm install
+      - run: pnpm build
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: build/
+          path: dist/
 
 
   deploy:
