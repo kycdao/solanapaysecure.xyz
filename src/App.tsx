@@ -1,55 +1,26 @@
-import { useCallback, useEffect, useRef, useState } from "react"
-
-import { Helmet } from "react-helmet"
-import { InsertQrIntoDom } from "../utils/solana-pay"
-import KycDaoModal from "../views/kycDaoModal"
-import { getSolanaProvider } from "../utils/getSolanaProvider"
-
+import React, { useCallback, useEffect, useState, useRef } from "react"
+import { KycDaoClient } from "@kycdao/widget"
+import { InsertQrIntoDom } from "./utils/solana-pay"
 import "./home.css"
 import SolanaPayModal from "./solanaPayModal"
+
+import solanaPayLogo from "assets/solanapay-logo.svg"
+import solanaCoffee from "assets/solana-coffe.png"
+import bgFrame from "assets/frame3451-pky.svg"
 
 const phantomInAppUrl = `https://phantom.app/ul/browse/${encodeURIComponent(
 	"https://solanapaysecure.kycdao.xyz/?startFlow=1"
 )}`
-
-const Home = () => {
-	const solanaProvider = useRef(getSolanaProvider())
+const App: React.FC = () => {
 
 	const [modalOpen, setModalOpen] = useState(
 		new URLSearchParams(window.location.search).get("startFlow") === "1"
 	)
 
-	const [kycModalOpen, setKycModalOpen] = useState(
-		new URLSearchParams(window.location.search).get("startKyc") === "1"
-	)
-
 	const [kycDaoProcessRan, setKycDaoProcessRan] = useState(false)
-
-	const onSuccess = useCallback(() => {
-		setKycDaoProcessRan(true)
-		console.log("The process successfully ran! ")
-	}, [])
-
-	const onFail = useCallback((data) => {
-		if (data !== "cancelled") {
-			alert("Something went wrong!")
-		}
-
-		setKycModalOpen(false)
-		console.log({ reason: data })
-	}, [])
 
 	const toggleModal = () => {
 		setModalOpen((value) => !value)
-	}
-
-	const startFlow = () => {
-		if (!solanaProvider.current) {
-			alert("cannot connect to Solana wallet")
-			return
-		}
-
-		setKycModalOpen(true)
 	}
 
 	useEffect(() => {
@@ -72,28 +43,65 @@ const Home = () => {
 				}
 			}
 		}
-	}, [modalOpen])
+	}, [modalOpen])  
+  
+  const [client, setClient] = useState<KycDaoClient>()
+  useEffect(() => {
+    const newClient = new KycDaoClient({
+      parent: "#modalRoot",
+      modal: true,
+      backdrop: true,
+      config: {
+        demoMode: true,
+        enabledBlockchainNetworks: [
+          "SolanaDevnet",
+        ],
+        enabledVerificationTypes: ["KYC"],
+        baseUrl: "https://staging.kycdao.xyz",
+      },
+      onSuccess: (data) => {
+		    setKycDaoProcessRan(true)
 
-	return (
-		<div className="home-container">
-			<Helmet>
-				<title>SolanaPay demos</title>
-				<meta property="og:title" content="Solana-pay-demo" />
-			</Helmet>
+        if (data) {
+          const i = /Already has an nft on (.*)\./g.exec(data)
+
+          if (i) {
+            console.log(`Already has an nft on ${i[1]}.`)
+          } else {
+            console.log("Completed KYC, tx: ", { data })
+          }
+        }
+      },
+      onFail: (data) => {
+        if (data !== "cancelled") {
+          alert("Something went wrong!")
+        }
+
+        console.log({ reason: data })
+	    },
+    })
+
+    setClient(newClient)
+  }, [])
+
+  const open = useCallback(
+    () => {
+      client?.open()
+    },
+    [client]
+  )
+
+  return (
+    <>
+      <div id="modalRoot"></div>
+      <div className="home-container">
 			<div className="home-mac-book-air-m23">
 				<div className="container home-frame8191">
 					<img
 						alt="solana logo"
-						src="/playground_assets/solanapay-logo.svg"
+						src={solanaPayLogo}
 						className="home-image"
 					/>
-					{/*
-          <div className="home-button">
-            <span className="home-text">
-              <span>Connect wallet</span>
-            </span>
-          </div>
-          */}
 				</div>
 				<div className="container home-frame8126">
 					<div className="home-container1">
@@ -119,7 +127,7 @@ const Home = () => {
 							</span>
 							<img
 								alt="Frame3451"
-								src="/playground_assets/frame3451-pky.svg"
+								src={bgFrame}
 								className="home-frame"
 							/>
 						</div>
@@ -129,7 +137,7 @@ const Home = () => {
 							</div>
 							<img
 								alt="Its a coffee mug, in a dark background, looks pretty delicious."
-								src="/playground_assets/solana-coffe.png"
+								src={solanaCoffee}
 								className="home-image2"
 							/>
 						</div>
@@ -168,7 +176,7 @@ const Home = () => {
 									</div>
 								</div>
 								<div className="modal-button-container">
-									<div onClick={startFlow} className="button-button">
+									<div onClick={() => open()} className="button-button">
 										<span className="modal-text">
 											<button>Connect wallet</button>
 										</span>
@@ -180,10 +188,9 @@ const Home = () => {
 					{kycDaoProcessRan && <SolanaPayModal onClose={toggleModal} />}
 				</>
 			)}
-
-			{kycModalOpen && <KycDaoModal onFail={onFail} onSuccess={onSuccess} />}
-		</div>
-	)
+		</div>      
+    </>
+  )
 }
 
-export default Home
+export default App

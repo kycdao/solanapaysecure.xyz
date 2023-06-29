@@ -2,9 +2,9 @@ import { encodeURL } from "@solana/pay"
 import { Keypair, PublicKey } from "@solana/web3.js"
 import BigNumber from "bignumber.js"
 import { useEffect } from "react"
-import { InsertQrIntoDom } from "../utils/solana-pay"
+import { InsertQrIntoDom } from "./utils/solana-pay"
 import "./solanaPayModal.css"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 
 const reference = new Keypair().publicKey
 const merchant = new PublicKey("yNW2jynYCKjiwC28hoFj3cAaLVJZDo2z8cTfu24k2P5")
@@ -26,13 +26,13 @@ const url = encodeURL({
 	memo: "Coffee#01",
 })
 
-const SolanaPayModal = ({ onClose }) => {
+const SolanaPayModal = ({ onClose } : {onClose : any}) => {
 	useEffect(() => {
 		const qrContainer = document.getElementById("mount-qr-code-solanapay")
 
 		if (qrContainer) {
 			InsertQrIntoDom({
-				url,
+				url: url.toString(),
 				containerElement: qrContainer,
 				size: 256,
 			})
@@ -69,8 +69,8 @@ const SolanaPayModal = ({ onClose }) => {
 	)
 }
 
-SolanaPayModal.propTypes = {
-	onClose: PropTypes.func,
-}
+// SolanaPayModal.propTypes = {
+// 	onClose: PropTypes.func,
+// }
 
 export default SolanaPayModal
