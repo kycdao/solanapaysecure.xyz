@@ -52,12 +52,11 @@ const App: React.FC = () => {
       modal: true,
       backdrop: true,
       config: {
-        demoMode: true,
         enabledBlockchainNetworks: [
-          "SolanaDevnet",
+          "SolanaMainnet",
         ],
         enabledVerificationTypes: ["KYC"],
-        baseUrl: "https://staging.kycdao.xyz",
+        baseUrl: "https://kycdao.xyz",
       },
       onSuccess: (data) => {
 		    setKycDaoProcessRan(true)
