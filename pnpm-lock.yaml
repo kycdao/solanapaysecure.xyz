@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@kycdao/kycdao-sdk': ^0.6.18
-  '@kycdao/widget': 0.6.16
+  '@kycdao/kycdao-sdk': ^0.6.19
+  '@kycdao/widget': 0.6.17
   '@solana/pay': ^0.2.4
   '@solana/qr-code-styling': ^1.6.0
   '@solana/web3.js': ^1.66.2
@@ -43,8 +43,8 @@ specifiers:
   vite: ^4.2.0
 
 dependencies:
-  '@kycdao/kycdao-sdk': 0.6.18_yjce2hxksm4fi4ij45ru4ytqjm
-  '@kycdao/widget': 0.6.16_yjce2hxksm4fi4ij45ru4ytqjm
+  '@kycdao/kycdao-sdk': 0.6.19_yjce2hxksm4fi4ij45ru4ytqjm
+  '@kycdao/widget': 0.6.17_yjce2hxksm4fi4ij45ru4ytqjm
   '@solana/pay': 0.2.5
   '@solana/web3.js': 1.77.3
   agent-base: 6.0.2
@@ -2477,8 +2477,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@kycdao/kycdao-sdk/0.6.18_sia6t4ft7etuleap2uptzgmgri:
-    resolution: {integrity: sha512-irWQYYopxcPFsI3gJ/exN6eVih0AYqt6qn9t60dw03fFV7sWDYycxkw3RWaQMqcQ4BwqB5FJmbDDsOIyZSladw==}
+  /@kycdao/kycdao-sdk/0.6.19_sia6t4ft7etuleap2uptzgmgri:
+    resolution: {integrity: sha512-XlYb+JzuCKFDkNOw8jpNTd/ZKALN5fFSt/cvy7+4x7QqlgKQ16clIRDhNNKqqM/SLeH9Uz/iQOs+WMcCvTuSvQ==}
     peerDependencies:
       near-api-js: ^1
       react: ^18
@@ -2512,8 +2512,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@kycdao/kycdao-sdk/0.6.18_yjce2hxksm4fi4ij45ru4ytqjm:
-    resolution: {integrity: sha512-irWQYYopxcPFsI3gJ/exN6eVih0AYqt6qn9t60dw03fFV7sWDYycxkw3RWaQMqcQ4BwqB5FJmbDDsOIyZSladw==}
+  /@kycdao/kycdao-sdk/0.6.19_yjce2hxksm4fi4ij45ru4ytqjm:
+    resolution: {integrity: sha512-XlYb+JzuCKFDkNOw8jpNTd/ZKALN5fFSt/cvy7+4x7QqlgKQ16clIRDhNNKqqM/SLeH9Uz/iQOs+WMcCvTuSvQ==}
     peerDependencies:
       near-api-js: ^1
       react: ^18
@@ -2546,14 +2546,14 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@kycdao/widget/0.6.16_yjce2hxksm4fi4ij45ru4ytqjm:
-    resolution: {integrity: sha512-zHO7FnW0i5Xpjljs6V1ocMhhlbZ+EHpnjfZZ40gb6LnnAwPGmuW23tlFfvMeeVMUK/9dcuTT8/OAlxnZjP20Pw==}
+  /@kycdao/widget/0.6.17_yjce2hxksm4fi4ij45ru4ytqjm:
+    resolution: {integrity: sha512-uzi3SjYSiHFTtiKMS6dupEJTIhclHrDsyCNSlqAqVCcYAm5FCGR96Jr+Rnt3mOR7iTNh7do5AwzFYUfv0fU6JA==}
     peerDependencies:
       react: ^18
       react-dom: ^18
       styled-components: ^5
     dependencies:
-      '@kycdao/kycdao-sdk': 0.6.18_sia6t4ft7etuleap2uptzgmgri
+      '@kycdao/kycdao-sdk': 0.6.19_sia6t4ft7etuleap2uptzgmgri
       agent-base: 6.0.2
       buffer: 6.0.3
       clsx: 1.2.1
